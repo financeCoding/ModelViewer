@@ -2,9 +2,7 @@ name: modelviewer
 description: WebGL Shader and Texture editor
 version: 1.0.0
 dependencies:
-  logging: 
-    sdk: logging
-  spectre:
-    git: https://github.com/donny-dont/spectre.git
-  objectory:
-    git: https://github.com/vadimtsushko/objectory.git
+#  logging: any
+  spectre: 0.5.0
+#  objectory:
+#    git: https://github.com/vadimtsushko/objectory.git
