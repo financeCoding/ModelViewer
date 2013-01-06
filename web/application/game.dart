@@ -439,7 +439,7 @@ class Game
       'pixelFormat': Texture.PixelFormatUnsignedByte
     };
 
-    _textures = new List<int>();
+    _textures = new List<Texture2D>();
 
     for (int i = 0; i < _maxTextureUnits; ++i)
     {
