@@ -31,7 +31,7 @@ String _newFileState =
         {
             "wrapS": "TextureWrapRepeat",
             "wrapT": "TextureWrapRepeat",
-            "filename": "web/resources/textures/dart_tex.png",
+            "filename": "resources/textures/dart_tex.png",
             "minFilter": "TextureMinFilterNearestMipmapLinear",
             "maxFilter": "TextureMagFilterLinear"
         },

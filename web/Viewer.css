@@ -31,28 +31,28 @@ $canvas_height: 600px;
 
 #new_file_button {
   background-repeat: no-repeat;
-  background: url(web/resources/images/new.png); }
+  background: url(resources/images/new.png); }
 
 #load_file_button {
   background-repeat: no-repeat;
-  background: url(web/resources/images/load.png); }
+  background: url(resources/images/load.png); }
 
 #save_file_button {
   background-repeat: no-repeat;
-  background: url(web/resources/images/save.png); }
+  background: url(resources/images/save.png); }
 
 #save_as_file_button {
   background-repeat: no-repeat;
-  background: url(web/resources/images/save_as.png); }
+  background: url(resources/images/save_as.png); }
 
 #fullscreen_button {
   background-repeat: no-repeat;
-  background: url(web/resources/images/fullscreen.png); }
+  background: url(resources/images/fullscreen.png); }
 
 #about_button {
   background-repeat: no-repeat;
   float: right;
-  background: url(web/resources/images/info.png) no-repeat;
+  background: url(resources/images/info.png) no-repeat;
   margin-top: 4px;
   margin-right: 10px; }
 
@@ -60,7 +60,7 @@ $canvas_height: 600px;
   float: right;
   width: 24px;
   height: 24px;
-  background: url(web/resources/images/status.png) no-repeat;
+  background: url(resources/images/status.png) no-repeat;
   margin-top: 4px;
   margin-right: 10px; }
   #status .disconnected {
@@ -151,19 +151,19 @@ $canvas_height: 600px;
 
 #cube_button {
   background-repeat: no-repeat;
-  background-image: url(web/resources/images/cube.png); }
+  background-image: url(resources/images/cube.png); }
 
 #sphere_button {
   background-repeat: no-repeat;
-  background-image: url(web/resources/images/sphere.png); }
+  background-image: url(resources/images/sphere.png); }
 
 #plane_button {
   background-repeat: no-repeat;
-  background-image: url(web/resources/images/plane.png); }
+  background-image: url(resources/images/plane.png); }
 
 #cylinder_button {
   background-repeat: no-repeat;
-  background-image: url(web/resources/images/cylinder.png); }
+  background-image: url(resources/images/cylinder.png); }
 
 #model_drop {
   width: 256px;
@@ -263,13 +263,13 @@ textarea {
   text-align: right; }
 
 .error_at {
-  background-image: url(web/resources/images/error.png);
+  background-image: url(resources/images/error.png);
   background-color: #ffb0a8;
   background-repeat: no-repeat !important;
   background-position-x: 2px; }
 
 .warning_at {
-  background-image: url(web/resources/images/warning.png);
+  background-image: url(resources/images/warning.png);
   background-color: #ffed87;
   background-repeat: no-repeat !important;
   background-position-x: 2px; }

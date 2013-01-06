@@ -51,7 +51,7 @@ class Game
    */
   ResourceManager _resourceManager;
   /// Handle to the viewport.
-  int _viewport;
+  Viewport _viewport;
 
   //---------------------------------------------------------------------
   // Animation variables
@@ -93,7 +93,7 @@ class Game
   /**
    * A handle to the vertex buffer for the mesh.
    */
-  int _meshVertexBuffer;
+  VertexBuffer _meshVertexBuffer;
   /**
    * A handle to the vertex attributes to use.
    *
@@ -114,7 +114,7 @@ class Game
   /// Maximum supported textures
   int _maxTextures;
   /// Handles to the textures to use.
-  List<int> _textures;
+  List<Texture2D> _textures;
 
   //---------------------------------------------------------------------
   // Shader variables
@@ -126,7 +126,7 @@ class Game
    * A vertex shader is a program that runs once per vertex.
    * It is run first within the pipeline.
    */
-  int _vertexShader;
+  VertexShader _vertexShader;
 
   /**
    * A handle to the fragment shader to use.
@@ -134,7 +134,7 @@ class Game
    * A fragment shader is a program that runs once per pixel.
    * It is run after the vertex shader within the pipeline.
    */
-  int _fragmentShader;
+  FragmentShader _fragmentShader;
 
   /**
    * A handle to the shader program to use.
@@ -144,15 +144,15 @@ class Game
    * pipeline is run through the vertex and fragment shader
    * code.
    */
-  int _shaderProgram;
+  ShaderProgram _shaderProgram;
   /**
    * A handle to the user supplied shader program.
    */
-  int _userShaderProgram;
+  ShaderProgram _userShaderProgram;
   /**
    * A handle to the fallback shader program to use.
    */
-  int _fallbackShaderProgram;
+  ShaderProgram _fallbackShaderProgram;
   /**
    * The uniforms associated with the shader.
    *
@@ -192,13 +192,13 @@ class Game
   //---------------------------------------------------------------------
 
   /// Contains blend state for the device.
-  int _blendState;
+  BlendState _blendState;
   /// Contains depth state for the device.
-  int _depthState;
+  DepthState _depthState;
   /// Contains rasterization state for the device.
-  int _rasterizerState;
+  RasterizerState _rasterizerState;
   /// Contains sampler states for a texture.
-  List<int> _samplerStates;
+  List<SamplerState> _samplerStates;
 
   //---------------------------------------------------------------------
   // Construction
@@ -340,10 +340,10 @@ class Game
     // Create the fallback shader program
     _fallbackShaderProgram = _graphicsDevice.createShaderProgram('Fallback Program', {});
 
-    int fallbackVertexShader = _graphicsDevice.createVertexShader('Fallback Vertex Shader', {});
+    VertexShader fallbackVertexShader = _graphicsDevice.createVertexShader('Fallback Vertex Shader', {});
     _context.compileShader(fallbackVertexShader, _fallbackVertexShader);
 
-    int fallbackFragmentShader = _graphicsDevice.createFragmentShader('Fallback Fragment Shader', {});
+    FragmentShader fallbackFragmentShader = _graphicsDevice.createFragmentShader('Fallback Fragment Shader', {});
     _context.compileShader(fallbackFragmentShader, _fallbackFragmentShader);
 
     Map fallbackShaderValues = {
@@ -396,11 +396,11 @@ class Game
 
     // Create the sampler states
     Map samplerStateProperties = { };
-    _samplerStates = new List<int>();
+    _samplerStates = new List<SamplerState>();
 
     for (int i = 0; i < _maxTextureUnits; ++i)
     {
-      int samplerState = _graphicsDevice.createSamplerState('Sampler State $i', samplerStateProperties);
+      SamplerState samplerState = _graphicsDevice.createSamplerState('Sampler State $i', samplerStateProperties);
       _samplerStates.add(samplerState);
     }
 
@@ -443,7 +443,7 @@ class Game
 
     for (int i = 0; i < _maxTextureUnits; ++i)
     {
-      int texture = _graphicsDevice.createTexture2D('Texture $i', textureUsage);
+      Texture2D texture = _graphicsDevice.createTexture2D('Texture $i', textureUsage);
       _textures.add(texture);
     }
   }
@@ -657,7 +657,7 @@ class Game
    */
   set mesh(String value)
   {
-    int meshResource = _resourceManager.registerResource(value);
+    ResourceBase meshResource = _resourceManager.registerResource(value);
 
     _resourceManager.addEventCallback(meshResource, ResourceEvents.TypeUpdate, (type, resource) {
       MeshResource mesh = resource;
@@ -696,10 +696,10 @@ class Game
    */
   void setTextureAt(int i, String value)
   {
-    int textureResource = _resourceManager.registerResource(value);
+    ResourceBase textureResource = _resourceManager.registerResource(value);
 
     _resourceManager.addEventCallback(textureResource, ResourceEvents.TypeUpdate, (type, resource) {
-      int texture = _textures[i];
+      Texture2D texture = _textures[i];
       _context.updateTexture2DFromResource(texture, textureResource, _resourceManager);
       _context.generateMipmap(texture);
     });

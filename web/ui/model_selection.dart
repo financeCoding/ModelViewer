@@ -34,28 +34,28 @@ class ModelSelection
   /// Serialization name for a cube model.
   static const String _cubeModelName = 'cube';
   /// Path to the cube model.
-  static const String _cubeModelPath = 'web/resources/meshes/cube.mesh';
+  static const String _cubeModelPath = 'resources/meshes/cube.mesh';
 
   /// The index of the sphere model.
   static const int _sphereModelIndex = 1;
   /// Serialization name for a sphere model.
   static const String _sphereModelName = 'sphere';
   /// Path to the sphere model.
-  static const String _sphereModelPath = 'web/resources/meshes/sphere.mesh';
+  static const String _sphereModelPath = 'resources/meshes/sphere.mesh';
 
   /// The index of the plane model.
   static const int _planeModelIndex = 2;
   /// Serialization name for a plane model.
   static const String _planeModelName = 'plane';
   /// Path to the plane model.
-  static const String _planeModelPath = 'web/resources/meshes/plane.mesh';
+  static const String _planeModelPath = 'resources/meshes/plane.mesh';
 
   /// The index of the cylinder model.
   static const int _cylinderModelIndex = 3;
   /// Serialization name for a cylinder model.
   static const String _cylinderModelName = 'cylinder';
   /// Path to the cylinder model.
-  static const String _cylinderModelPath = 'web/resources/meshes/cylinder.mesh';
+  static const String _cylinderModelPath = 'resources/meshes/cylinder.mesh';
 
   //---------------------------------------------------------------------
   // Member variables

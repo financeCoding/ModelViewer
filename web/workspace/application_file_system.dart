@@ -26,7 +26,7 @@ class ApplicationFileSystem
   //---------------------------------------------------------------------
 
   /// The [DOMFileSystem] for the application.
-  DOMFileSystem _fileSystem;
+  FileSystem _fileSystem;
   /// The number of bytes alotted.
   int _bytesGranted;
   /// The temporary [Workspace].
@@ -50,23 +50,23 @@ class ApplicationFileSystem
     _workspaces = new List<Workspace>();
 
     // Request a quota
-    window.webkitStorageInfo.requestQuota(LocalWindow.PERSISTENT, _bytesToRequest, (grantedBytes) {
+    window.webkitStorageInfo.requestQuota(Window.PERSISTENT, _bytesToRequest, (grantedBytes) {
       _bytesGranted = grantedBytes;
 
       // Request the file system
-      window.webkitRequestFileSystem(LocalWindow.PERSISTENT, grantedBytes, _onFileSystemCreated, _onFileSystemError);
+      window.webkitRequestFileSystem(Window.PERSISTENT, grantedBytes, _onFileSystemCreated, _onFileSystemError);
     }, _onQuotaError);
   }
 
   /**
    * Callback for when a quota error occurs.
    */
-  void _onQuotaError(DOMException error) { }
+  void _onQuotaError(DomException error) { }
 
   /**
    * Callback for when the file system is created.
    */
-  void _onFileSystemCreated(DOMFileSystem fileSystem)
+  void _onFileSystemCreated(FileSystem fileSystem)
   {
     _fileSystem = fileSystem;
 

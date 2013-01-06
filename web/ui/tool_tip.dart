@@ -18,7 +18,7 @@ class ToolTip
 
     ImageElement help = new ImageElement();
     _element.nodes.add(help);
-    help.src = 'web/resources/images/help.png';
+    help.src = 'resources/images/help.png';
 
     help.on.mouseOver.add((_) {
       _element.classes.add(_ElementNames.toolTipClassName);
